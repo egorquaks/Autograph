@@ -1,0 +1,4 @@
+name: Autograph
+version: '${project.version}'
+main: by.quaks.autograph.Autograph
+api-version: 1.19
