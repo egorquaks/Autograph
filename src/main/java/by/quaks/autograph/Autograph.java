@@ -7,7 +7,7 @@ public final class Autograph extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-
+        AphList.setup();
     }
 
     @Override
