@@ -8,6 +8,7 @@ public final class Autograph extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         AphList.setup();
+        getCommand("autograph").setExecutor(new AutographCMD());
     }
 
     @Override
