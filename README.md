@@ -1,7 +1,7 @@
 # Autograph
 ![GitHub](https://img.shields.io/github/license/qu4ks/Autograph?style=flat-square)
 
-A simple plugin that allows you to leave autographs on items
+A simple plugin that allows you to leave autographs on items.
 
 ## Features
 
