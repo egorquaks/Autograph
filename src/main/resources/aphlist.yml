@@ -1,11 +1,11 @@
 #item for autograph not defined:
-itemUndefined: "Возьмите предмет на которм хотите оставить подпись в ведущую руку"
+itemUndefined: "Take the item you want to autograph in your dominant hand"
 #item is not in the "autographItemList" list:
-itemNotTheList: "Похоже что на этом предмете нету места для подписи"
+itemNotTheList: "It looks like there is no space for an autograph on this item."
 #item contains the maximum number of autographs:
-itemContainsMaxAutographs: "Кто-то уже подписал этот предмет"
+itemContainsMaxAutographs: "Someone already signed this item"
 #autograph form
-autographForm: "Подпись {player-name}"
+autographForm: "Autograph by {player-name}"
 
 autographItemList:
   - WOODEN_SHOVEL
