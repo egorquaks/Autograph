@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class AutographCMD implements CommandExecutor {
-    List<String> autographItemList = AphList.get().getStringList("autographItemList");
+    List<String> autographItemList = Config.get().getStringList("autographItemList");
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (sender instanceof Player) {
@@ -19,9 +19,9 @@ public class AutographCMD implements CommandExecutor {
             assert p != null;
             ItemStack item = p.getItemInHand();
             if (item.getType() == null || item.getType().toString().contains("AIR")) {
-                p.sendMessage(AphList.get().getString("itemUndefined"));
+                p.sendMessage(Config.get().getString("itemUndefined"));
             } else if (!autographItemList.contains(item.getType().toString())) {
-                p.sendMessage(ChatColor.RED + AphList.get().getString("itemNotTheList"));
+                p.sendMessage(ChatColor.RED + Config.get().getString("itemNotTheList"));
                 return true;
             } else {
                 if (Utils.hasAutograph(item)) {
