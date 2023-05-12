@@ -6,10 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AutographCMD implements CommandExecutor {
@@ -26,19 +24,11 @@ public class AutographCMD implements CommandExecutor {
                 p.sendMessage(ChatColor.RED + AphList.get().getString("itemNotTheList"));
                 return true;
             } else {
-                ItemMeta itemM = item.getItemMeta();
-                List<String> lore = new ArrayList<>();
-                assert itemM != null;
-                if (itemM.getLore() != null) {
-                    lore = itemM.getLore();
-                }
-                if (lore.toString().contains(AphList.get().getString("autographForm").replaceAll("\\{player-name}",""))) {
-                    p.sendMessage(ChatColor.RED + AphList.get().getString("itemContainsMaxAutographs"));
+                if (Utils.hasAutograph(item)) {
+                    p.sendMessage(ChatColor.RED + Config.get().getString("itemContainsMaxAutographs"));
                     return true;
                 }
-                lore.add(ChatColor.GRAY + AphList.get().getString("autographForm").replaceAll("\\{player-name}",ChatColor.AQUA+p.getName()+ChatColor.GRAY));
-                itemM.setLore(lore);
-                item.setItemMeta(itemM);
+                Utils.setLore(item,ChatColor.GRAY + Config.get().getString("autographForm").replaceAll("\\{player-name}",ChatColor.AQUA+p.getName()+ChatColor.GRAY));
             }
         }
         return true;
