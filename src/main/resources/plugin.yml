@@ -4,7 +4,7 @@ main: by.quaks.autograph.Autograph
 api-version: 1.19
 commands:
   autograph:
-    description: Подписать предмет
-    usage: /autograph
+    description: Leave autograph
+    usage: If you see this message, the command is most likely disabled by the server administrator.
     aliases:
       - aph
