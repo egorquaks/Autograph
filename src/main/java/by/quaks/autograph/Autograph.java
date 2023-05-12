@@ -14,8 +14,13 @@ public final class Autograph extends JavaPlugin {
                 e.printStackTrace();
             }
         }
-        AphList.setup();
-        getCommand("autograph").setExecutor(new AutographCMD());
+        Config.setup();
+        if(Config.get().getBoolean("command")) {
+            getCommand("autograph").setExecutor(new AutographCMD());
+        }
+        if(Config.get().getBoolean("anvil")) {
+            getServer().getPluginManager().registerEvents(new AnvilCraft(), this);
+        }
     }
 
     @Override
