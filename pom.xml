@@ -6,7 +6,7 @@
 
     <groupId>by.quaks</groupId>
     <artifactId>Autograph</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>Autograph</name>
@@ -39,7 +39,7 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <outputFile>C:\Users\egorl\Desktop\servers\1.19.3 server test\plugins\${project.name}-1.19.4-${project.version}.jar</outputFile>
+                            <outputFile>C:\Users\egorl\Desktop\servers\1.19.3 server test\plugins\${project.name}-1.19.X-${project.version}.jar</outputFile>
                         </configuration>
                     </execution>
                 </executions>
