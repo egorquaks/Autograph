@@ -1,12 +1,33 @@
 #item for autograph not defined:
 itemUndefined: "Take the item you want to autograph in your dominant hand"
+
 #item is not in the "autographItemList" list:
 itemNotTheList: "It looks like there is no space for an autograph on this item."
+
 #item contains the maximum number of autographs:
 itemContainsMaxAutographs: "Someone already signed this item"
+
 #autograph form
 autographForm: "Autograph by {player-name}"
 
+#Ability to enable leaving an autograph using the command
+command: true
+
+#Ability to enable leaving an autograph using the anvil
+anvil: true
+
+#An item used to leave an autograph through anvil
+autographItem: PAPER
+
+#Rename for an item used to leave an autograph trough anvil (may be missing (absolutely null - no ""), in which case the item will be used without renaming)
+autographItemName: "Autograph"
+#autographItemName:
+# ↑ to use item without renaming
+
+#Enchantment cost for Autograph (Anvil)
+autographCost: 10
+
+#Allowed items to autograph
 autographItemList:
   - WOODEN_SHOVEL
   - STONE_SHOVEL
