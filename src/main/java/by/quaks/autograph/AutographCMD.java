@@ -28,7 +28,7 @@ public class AutographCMD implements CommandExecutor {
                     p.sendMessage(ChatColor.RED + Config.get().getString("itemContainsMaxAutographs"));
                     return true;
                 }
-                Utils.setLore(item,ChatColor.GRAY + Config.get().getString("autographForm").replaceAll("\\{player-name}",ChatColor.AQUA+p.getName()+ChatColor.GRAY));
+                Utils.setLore(item,Utils.genAutograph(p.getName()));
             }
         }
         return true;

@@ -10,6 +10,11 @@ itemContainsMaxAutographs: "Someone already signed this item"
 #autograph form
 autographForm: "Autograph by {player-name}"
 
+#player's name color
+playerNameColor: "#55FFFF"
+#Supports HEX or some color names. List of supported color names:
+#BLACK DARK_BLUE DARK_GREEN DARK_AQUA DARK_RED DARK_PURPLE GOLD GRAY DARK_GRAY BLUE GREEN AQUA RED LIGHT_PURPLE YELLOW WHITE
+
 #Ability to enable leaving an autograph using the command
 command: true
 

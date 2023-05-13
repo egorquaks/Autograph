@@ -39,7 +39,7 @@ public class Utils {
         return null;
     }
     public static String genAutograph(String author){
-       return ChatColor.GRAY + Config.get().getString("autographForm").replaceAll("\\{player-name}",ChatColor.AQUA+author+ChatColor.GRAY);
+       return ChatColor.GRAY + Config.get().getString("autographForm").replaceAll("\\{player-name}",getColor(Config.get().getString("playerNameColor"))+author+ChatColor.GRAY);
     }
     public static boolean isAutographable(ItemStack item){
         List<String> autographItemList = Config.get().getStringList("autographItemList");
