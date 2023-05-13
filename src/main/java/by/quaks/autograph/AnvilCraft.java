@@ -15,11 +15,22 @@ public class AnvilCraft implements Listener {
         if (
                 firstItem != null
                 && secondItem != null
-                && !Utils.hasAutograph(firstItem)
                 && Utils.isAutographable(firstItem)
                 && Objects.equals(secondItem.getType().toString(), Config.get().getString("autographItem"))
                 && Objects.equals(Objects.requireNonNull(Utils.getItemName(secondItem)).toLowerCase(), Objects.requireNonNull(Config.get().getString("autographItemName")).toLowerCase())
         ){
+            if(!Config.get().getBoolean("multiAutographs")){
+                if(!Utils.hasAutograph(firstItem)){
+                    makeItem(event, firstItem);
+                }
+            }else{
+                makeItem(event, firstItem);
+            }
+        }
+    }
+
+    private void makeItem(PrepareAnvilEvent event, ItemStack firstItem) {
+        if(!Utils.hasAutographBy(firstItem,event.getView().getPlayer().getName())){
             ItemStack result = firstItem.clone();
             Utils.setLore(result, Utils.genAutograph(event.getView().getPlayer().getName()));
             event.setResult(result);

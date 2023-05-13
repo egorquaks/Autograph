@@ -7,6 +7,9 @@ itemNotTheList: "It looks like there is no space for an autograph on this item."
 #item contains the maximum number of autographs:
 itemContainsMaxAutographs: "Someone already signed this item"
 
+#item contains the maximum number of autographs by user:
+itemContainsMaxAutographsBy: "You can't leave autograph twice"
+
 #autograph form
 autographForm: "Autograph by {player-name}"
 
@@ -14,6 +17,9 @@ autographForm: "Autograph by {player-name}"
 playerNameColor: "#55FFFF"
 #Supports HEX or some color names. List of supported color names:
 #BLACK DARK_BLUE DARK_GREEN DARK_AQUA DARK_RED DARK_PURPLE GOLD GRAY DARK_GRAY BLUE GREEN AQUA RED LIGHT_PURPLE YELLOW WHITE
+
+#Enabling multiple autographs
+multiAutographs: false
 
 #Ability to enable leaving an autograph using the command
 command: true

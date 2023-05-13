@@ -24,8 +24,14 @@ public class AutographCMD implements CommandExecutor {
                 p.sendMessage(ChatColor.RED + Config.get().getString("itemNotTheList"));
                 return true;
             } else {
-                if (Utils.hasAutograph(item)) {
-                    p.sendMessage(ChatColor.RED + Config.get().getString("itemContainsMaxAutographs"));
+                if(!Config.get().getBoolean("multiAutographs")){
+                    if (Utils.hasAutograph(item)) {
+                        p.sendMessage(ChatColor.RED + Config.get().getString("itemContainsMaxAutographs"));
+                        return true;
+                    }
+                }
+                if(Utils.hasAutographBy(item,p.getName())){
+                    p.sendMessage(ChatColor.RED + Config.get().getString("itemContainsMaxAutographsBy"));
                     return true;
                 }
                 Utils.setLore(item,Utils.genAutograph(p.getName()));
