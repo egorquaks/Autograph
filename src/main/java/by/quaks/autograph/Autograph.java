@@ -21,6 +21,7 @@ public final class Autograph extends JavaPlugin {
         if(Config.get().getBoolean("anvil")) {
             getServer().getPluginManager().registerEvents(new AnvilCraft(), this);
         }
+        getCommand("cleara").setExecutor(new ClearCMD());
     }
 
     @Override

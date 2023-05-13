@@ -19,6 +19,27 @@ public class Utils {
         itemM.setLore(lore);
         item.setItemMeta(itemM);
     }
+    public static void clearAutograph(ItemStack item){
+        ItemMeta itemM = item.getItemMeta();
+        List<String> lore = new ArrayList<>();
+        assert itemM != null;
+        if (itemM.getLore() != null) {
+            lore = itemM.getLore();
+        }
+        lore.removeIf(element -> element.contains(Config.get().getString("autographForm").replaceAll("\\{player-name}","")));
+        itemM.setLore(lore);
+        item.setItemMeta(itemM);
+    }
+
+    public static boolean hasAutographBy(ItemStack item, String name){
+        ItemMeta itemM = item.getItemMeta();
+        List<String> lore = new ArrayList<>();
+        assert itemM != null;
+        if (itemM.getLore() != null) {
+            lore = itemM.getLore();
+        }
+        return lore.stream().anyMatch(element -> element.contains(name));
+    }
     public static boolean hasAutograph(ItemStack item){
         ItemMeta itemM = item.getItemMeta();
         List<String> lore = new ArrayList<>();

@@ -8,3 +8,6 @@ commands:
     usage: If you see this message, the command is most likely disabled by the server administrator.
     aliases:
       - aph
+  cleara:
+    description: Clear autograph
+    usage: If you see this message, the command is most likely disabled by the server administrator.
