@@ -14,7 +14,7 @@ public class ClearCMD implements CommandExecutor {
         if(commandSender instanceof Player){
             Player p = ((Player) commandSender).getPlayer();
             assert p != null;
-            if (p.hasPermission("autograph.clear"))
+            if (p.hasPermission("autograph.cleara"))
             {
                 ItemStack item = p.getItemInHand();
                 if (item.getType() == null || item.getType().toString().contains("AIR")) {
