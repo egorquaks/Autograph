@@ -25,6 +25,8 @@ OR
 
 Combine an item on the anvil with a special item (by default, paper renamed "Autograph") to leave an autograph.
 
+`/cleara` to clear all autographs on item (perm: autograph.cleara)
+
 ## Demonstration
 <details>
    <summary>Click to reveal spoiler</summary>
