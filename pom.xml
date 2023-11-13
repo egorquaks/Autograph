@@ -38,13 +38,25 @@
                 <version>3.2.4</version>
                 <executions>
                     <execution>
+                        <id>shade-execution-1</id>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <outputFile>D:\IdeaProjects\.BUILDS\Autograph\${project.name}-1.20.X-${project.version}-${buildNumber}.jar</outputFile>
+                            <outputFile>D:\IdeaProjects\.BUILDS\Autograph\${project.name}-1.19.4-${project.version}-${buildNumber}.jar</outputFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>shade-execution-2</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <outputFile>C:\Users\egorl\Desktop\servers\spigot MULTI\plugins\${project.name}-1.19.4-${project.version}-latest.jar</outputFile>
                         </configuration>
                     </execution>
                 </executions>
