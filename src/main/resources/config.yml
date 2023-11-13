@@ -1,45 +1,32 @@
-#item for autograph not defined:
-itemUndefined: "Take the item you want to autograph in your dominant hand"
-
-#item is not in the "autographItemList" list:
-itemNotTheList: "It looks like there is no space for an autograph on this item."
-
-#item contains the maximum number of autographs:
-itemContainsMaxAutographs: "Someone already signed this item"
-
-#item contains the maximum number of autographs by user:
-itemContainsMaxAutographsBy: "You can't leave autograph twice"
-
-#autograph form
-autographForm: "Autograph by {player-name}"
-
-#player's name color
-playerNameColor: "#55FFFF"
-#Supports HEX or some color names. List of supported color names:
-#BLACK DARK_BLUE DARK_GREEN DARK_AQUA DARK_RED DARK_PURPLE GOLD GRAY DARK_GRAY BLUE GREEN AQUA RED LIGHT_PURPLE YELLOW WHITE
-
-#Enabling multiple autographs
-multiAutographs: false
-
-#Ability to enable leaving an autograph using the command
-command: true
-
-#Ability to enable leaving an autograph using the anvil
-anvil: true
-
-#An item used to leave an autograph through anvil
-autographItem: PAPER
-
-#Rename for an item used to leave an autograph trough anvil (may be missing (absolutely null - no ""), in which case the item will be used without renaming)
-autographItemName: "Autograph"
-#autographItemName:
-# ↑ to use item without renaming
-
-#Enchantment cost for Autograph (Anvil)
-autographCost: 10
-
+general:
+  #Autograph form
+  autograph: "<b><dark_gray>Authograph by <rainbow>{player-name}</rainbow></dark_gray></b>"
+  #item is not in the "autographItemList" list:
+  itemNotTheList: "<color:red>It looks like there is no space for an autograph on this item.</color:red>"
+  #item contains the maximum number of autographs:
+  itemContainsMaxAutographs: "<color:red>Someone already signed this item</color:red>"
+  #item contains the maximum number of autographs by user:
+  itemContainsMaxAutographsBy: "<color:red>You can't leave autograph twice</color:red>"
+  #Enabling multiple autographs
+  multipleAutographs: false
+anvil:
+  enabled: true
+  item: #An item used to leave an autograph through anvil
+    type: NAME_TAG
+    useItemName: true
+    itemName: "Autograph"
+  autographCost: 10
+command:
+  enabled: true
+  disabledMessage: "<color:red>If you see this message, the command is most likely disabled by the server administrator.<color:red>"
+clear:
+  grindstone:
+    enabled: true
+  command:
+    enabled: true
+    disabledMessage: "<color:red>If you see this message, the command is most likely disabled by the server administrator.<color:red>"
 #Allowed items to autograph
-autographItemList:
+allowedItems:
   - WOODEN_SHOVEL
   - STONE_SHOVEL
   - IRON_SHOVEL
@@ -74,10 +61,10 @@ autographItemList:
   - LEATHER_CHESTPLATE
   - LEATHER_LEGGINGS
   - LEATHER_BOOTS
-  - chainmail_HELMET
-  - chainmail_CHESTPLATE
-  - chainmail_LEGGINGS
-  - chainmail_BOOTS
+  - CHAINMAIL_HELMET
+  - CHAINMAIL_CHESTPLATE
+  - CHAINMAIL_LEGGINGS
+  - CHAINMAIL_BOOTS
   - IRON_HELMET
   - IRON_CHESTPLATE
   - IRON_LEGGINGS
