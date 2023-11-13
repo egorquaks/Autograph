@@ -1,0 +1,106 @@
+#item for autograph not defined:
+itemUndefined: "Take the item you want to autograph in your dominant hand"
+
+#item is not in the "autographItemList" list:
+itemNotTheList: "It looks like there is no space for an autograph on this item."
+
+#item contains the maximum number of autographs:
+itemContainsMaxAutographs: "Someone already signed this item"
+
+#item contains the maximum number of autographs by user:
+itemContainsMaxAutographsBy: "You can't leave autograph twice"
+
+#autograph form
+autographForm: "Autograph by {player-name}"
+
+#player's name color
+playerNameColor: "#55FFFF"
+#Supports HEX or some color names. List of supported color names:
+#BLACK DARK_BLUE DARK_GREEN DARK_AQUA DARK_RED DARK_PURPLE GOLD GRAY DARK_GRAY BLUE GREEN AQUA RED LIGHT_PURPLE YELLOW WHITE
+
+#Enabling multiple autographs
+multiAutographs: false
+
+#Ability to enable leaving an autograph using the command
+command: true
+
+#Ability to enable leaving an autograph using the anvil
+anvil: true
+
+#An item used to leave an autograph through anvil
+autographItem: PAPER
+
+#Rename for an item used to leave an autograph trough anvil (may be missing (absolutely null - no ""), in which case the item will be used without renaming)
+autographItemName: "Autograph"
+#autographItemName:
+# ↑ to use item without renaming
+
+#Enchantment cost for Autograph (Anvil)
+autographCost: 10
+
+#Allowed items to autograph
+autographItemList:
+  - WOODEN_SHOVEL
+  - STONE_SHOVEL
+  - IRON_SHOVEL
+  - DIAMOND_SHOVEL
+  - GOLDEN_SHOVEL
+  - NETHERITE_SHOVEL
+  - WOODEN_PICKAXE
+  - STONE_PICKAXE
+  - IRON_PICKAXE
+  - DIAMOND_PICKAXE
+  - GOLDEN_PICKAXE
+  - NETHERITE_PICKAXE
+  - WOODEN_AXE
+  - STONE_AXE
+  - IRON_AXE
+  - DIAMOND_AXE
+  - GOLDEN_AXE
+  - NETHERITE_AXE
+  - WOODEN_HOE
+  - STONE_HOE
+  - IRON_HOE
+  - DIAMOND_HOE
+  - GOLDEN_HOE
+  - NETHERITE_HOE
+  - WOODEN_SWORD
+  - STONE_SWORD
+  - IRON_SWORD
+  - DIAMOND_SWORD
+  - GOLDEN_SWORD
+  - NETHERITE_SWORD
+  - LEATHER_HELMET
+  - LEATHER_CHESTPLATE
+  - LEATHER_LEGGINGS
+  - LEATHER_BOOTS
+  - chainmail_HELMET
+  - chainmail_CHESTPLATE
+  - chainmail_LEGGINGS
+  - chainmail_BOOTS
+  - IRON_HELMET
+  - IRON_CHESTPLATE
+  - IRON_LEGGINGS
+  - IRON_BOOTS
+  - DIAMOND_HELMET
+  - DIAMOND_CHESTPLATE
+  - DIAMOND_LEGGINGS
+  - DIAMOND_BOOTS
+  - GOLDEN_HELMET
+  - GOLDEN_CHESTPLATE
+  - GOLDEN_LEGGINGS
+  - GOLDEN_BOOTS
+  - NETHERITE_HELMET
+  - NETHERITE_CHESTPLATE
+  - NETHERITE_LEGGINGS
+  - NETHERITE_BOOTS
+  - TURTLE_HELMET
+  - BOW
+  - FISHING_ROD
+  - CROSSBOW
+  - SPYGLASS
+  - FLINT_AND_STEEL
+  - SHIELD
+  - SHEARS
+  - ELYTRA
+  - TRIDENT

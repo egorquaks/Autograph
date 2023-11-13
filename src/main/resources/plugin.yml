@@ -1,6 +1,6 @@
 name: Autograph
 version: '${project.version}'
-main: by.quaks.autograph.Autograph
+main: by.quaks.main.AutographPlugin
 api-version: 1.19
 commands:
   autograph:
@@ -8,6 +8,8 @@ commands:
     usage: If you see this message, the command is most likely disabled by the server administrator.
     aliases:
       - aph
-  cleara:
+  remove-autograph:
+    aliases:
+      - rma
     description: Clear autograph
     usage: If you see this message, the command is most likely disabled by the server administrator.
