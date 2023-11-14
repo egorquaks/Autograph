@@ -23,7 +23,7 @@ public class AutographPlugin extends JavaPlugin {
         this.adventure = BukkitAudiences.create(this);
         new ConfigsInitializer();
         getCommand("autograph").setExecutor(new AutographCommand(adventure()));
-        getServer().getPluginManager().registerEvents(new AnvilListener(), this);
+        getServer().getPluginManager().registerEvents(new AnvilListener(this), this);
     }
     @Override
     public void onDisable() {
