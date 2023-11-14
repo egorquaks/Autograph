@@ -1,7 +1,9 @@
 package by.quaks.main;
 
+import by.quaks.autograph.AnvilCraft;
 import by.quaks.main.commands.AutographCommand;
 import by.quaks.main.config.ConfigsInitializer;
+import by.quaks.main.listeners.AnvilListener;
 import lombok.NonNull;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,6 +23,7 @@ public class AutographPlugin extends JavaPlugin {
         this.adventure = BukkitAudiences.create(this);
         new ConfigsInitializer();
         getCommand("autograph").setExecutor(new AutographCommand(adventure()));
+        getServer().getPluginManager().registerEvents(new AnvilListener(), this);
     }
     @Override
     public void onDisable() {
