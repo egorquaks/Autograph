@@ -19,6 +19,7 @@ anvil:
 command:
   enabled: true
   disabledMessage: "<color:red>If you see this message, the command is most likely disabled by the server administrator.<color:red>"
+  autographCost: 10
 clear:
   grindstone:
     enabled: true
