@@ -1,6 +1,8 @@
+## You can generate formatted messages here: https://webui.advntr.dev/
+
 general:
   #Autograph form
-  autograph: "<b><dark_gray>Authograph by <rainbow>{player-name}</rainbow></dark_gray></b>"
+  autograph: "<gradient:#ff0000:#ffff00:#ff0000>Authograph by {player-name}"
   #item is not in the "autographItemList" list:
   itemNotTheList: "<color:red>It looks like there is no space for an autograph on this item.</color:red>"
   #item contains the maximum number of autographs:
@@ -9,6 +11,8 @@ general:
   itemContainsMaxAutographsBy: "<color:red>You can't leave autograph twice</color:red>"
   #Enabling multiple autographs
   multipleAutographs: false
+  #emptyHandMessage
+  emptyHandMessage: "<color:red>Take the item you want to autograph in your main hand</color:red>"
 anvil:
   enabled: true
   item: #An item used to leave an autograph through anvil
@@ -20,7 +24,7 @@ command:
   enabled: true
   disabledMessage: "<color:red>If you see this message, the command is most likely disabled by the server administrator.<color:red>"
   autographCost: 10
-clear:
+remove-autograph:
   grindstone:
     enabled: true
   command:
