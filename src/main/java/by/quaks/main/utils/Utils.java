@@ -50,7 +50,7 @@ public class Utils {
     }
     public static String genAutograph(String author){
         String miniAutograph = MainConfig.get().getString("general.autograph").replaceAll("\\{player-name}",author);
-        Bukkit.getLogger().info(GsonComponentSerializer.gson().serialize(MiniMessage.miniMessage().deserialize(miniAutograph)));
+        //Bukkit.getLogger().info(GsonComponentSerializer.gson().serialize(MiniMessage.miniMessage().deserialize(miniAutograph)));
         return LegacyComponentSerializer.builder().hexColors().useUnusualXRepeatedCharacterHexFormat().build().serialize(MiniMessage.miniMessage().deserialize(miniAutograph));
     }
     public static boolean canContainAutograph(ItemStack item){
