@@ -3,7 +3,9 @@ package by.quaks.main.commands;
 import by.quaks.main.config.MainConfig;
 import by.quaks.main.utils.Utils;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
+import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,29 +23,38 @@ public class AutographCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         if(commandSender instanceof Player player){
-            ItemStack item = player.getInventory().getItemInMainHand();
-            if(item.getType().isAir()){
-                player.sendRawMessage("");//minimessage
-                return true;
-            }
-            List<String> allowedItems = MainConfig.get().getStringList("allowedItems");
-            if(allowedItems.stream().noneMatch(item.getType().toString()::equalsIgnoreCase)){
-               player.sendMessage("This item cannot be autographed"); //minimessage
-               return true;
-            }else{
-                boolean hasAutographBy = Utils.hasAutographBy(item, player.getName());
+            if(MainConfig.get().getBoolean("command.enabled")){
+                ItemStack item = player.getInventory().getItemInMainHand();
+                if (item.getType().isAir()) {
+                    sendMessageToPlayer(player,"general.emptyHandMessage");
+                    return true;
+                }
+                List<String> allowedItems = MainConfig.get().getStringList("general.allowedItems");
+                allowedItems.forEach(String::toLowerCase);
+                if (allowedItems.contains(item.getType().name().toLowerCase())) {
+                    sendMessageToPlayer(player,"general.itemNotTheList");
+                    return true;
+                } else {
+                    boolean hasAutographBy = Utils.hasAutographBy(item, player.getName());
                     if (!hasAutographBy) {
-                        Utils.setLore(item, Utils.genAutograph(player.getName()));
+                        Utils.addLore(item, Utils.genAutograph(player.getName()));
                         return true;
-                    }else{
-                        adventure.player(player).sendMessage( MiniMessage.miniMessage().deserialize(MainConfig.get().getString("general.itemContainsMaxAutographsBy")));
+                    } else {
+                        sendMessageToPlayer(player,"general.itemContainsMaxAutographsBy");
                     }
-                    if(MainConfig.get().getBoolean("general.multipleAutographs")){
-                        Utils.setLore(item, Utils.genAutograph(player.getName()));
+                    if (MainConfig.get().getBoolean("general.multipleAutographs")) {
+                        Utils.addLore(item, Utils.genAutograph(player.getName()));
                         return true;
                     }
+                }
+            }else{
+                sendMessageToPlayer(player,"command.disabledMessage");
             }
         }
         return true;
+    }
+    private void sendMessageToPlayer(Player player, String path) {
+        Component message = MiniMessage.miniMessage().deserialize(MainConfig.get().getString(path));
+        adventure.player(player).sendMessage(message);
     }
 }
