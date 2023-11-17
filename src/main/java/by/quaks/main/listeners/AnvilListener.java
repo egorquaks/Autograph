@@ -8,13 +8,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.PrepareAnvilEvent;
-import org.bukkit.inventory.AnvilInventory;
 import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 import static org.bukkit.Bukkit.getServer;
@@ -26,35 +23,18 @@ public class AnvilListener implements Listener {
         this.plugin = plugin;
     }
 
-    private final Map<Player, AnvilInventory> previousInventories = new HashMap<>();
-
     @EventHandler
-    public void onPrepareAnvilFix(PrepareAnvilEvent event) {
-        /*
-         * Такая реализация ивента предотвращает множественные вызовы ивента из-за бага внутри Spigot который просто
-         * по рофлу вызывает этот метод по 3-5 раз.
-         * Самое удивительное, что фиксить это никто не собирается... ну, ладно.
-         */
-        Player player = (Player) event.getView().getPlayer();
-        AnvilInventory inventory = event.getInventory();
-        if (previousInventories.put(player, inventory) == null) {
-            onPrepareAnvil(event);
-            getServer().getScheduler().runTask(plugin, task -> previousInventories.remove(player));
-        }
-        onPrepareAnvil(event);
-    }
-
     public void onPrepareAnvil(PrepareAnvilEvent event) {
         if (!MainConfig.get().getBoolean("anvil.enabled")) {
             return;
         }
         ItemStack baseItem = event.getInventory().getItem(0);
         ItemStack appliedItem = event.getInventory().getItem(1);
-        if (baseItem == null || appliedItem == null) {
+        List<String> allowedItems = MainConfig.get().getStringList("allowedItems");
+        if (baseItem == null || appliedItem == null || !allowedItems.contains(baseItem.getType().name())) {
             return;
         }
         ItemStack finalItem = baseItem.clone();
-        List<String> allowedItems = MainConfig.get().getStringList("allowedItems");
         if(appliedItem.getType().name().equals(MainConfig.get().get("anvil.item.type"))){
             if(MainConfig.get().getBoolean("anvil.item.useItemName")) {
                 Objects.requireNonNull(appliedItem.getItemMeta()).getDisplayName();
