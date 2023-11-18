@@ -2,7 +2,7 @@
 
 general:
   #Autograph form
-  autograph: "<gradient:#ff0000:#ffff00:#ff0000>Authograph by {player-name}"
+  autograph: "<gradient:#ff0000:#ffff00:#ff0000>Autograph by {player-name}"
   #item is not in the "autographItemList" list:
   itemNotTheList: "<color:red>It looks like there is no space for an autograph on this item.</color:red>"
   #item contains the maximum number of autographs:
