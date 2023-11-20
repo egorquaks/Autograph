@@ -40,17 +40,23 @@ public class AutographCommand implements CommandExecutor {
                     sendMessageToPlayer(player, "general.itemNotTheList");
                     return true;
                 } else {
-                    boolean hasAutographBy = Utils.hasAutographBy(item, player.getName());
-                    if (!hasAutographBy) {
-                        Utils.addLore(item, Utils.genAutograph(player.getName()));
-                        return true;
-                    } else {
-                        if (MainConfig.get().getBoolean("general.multipleAutographs")) {
+                    if(MainConfig.get().getInt("command.autographCost") <= player.getLevel()){
+                        boolean hasAutographBy = Utils.hasAutographBy(item, player.getName());
+                        if (!hasAutographBy) {
                             Utils.addLore(item, Utils.genAutograph(player.getName()));
+                            player.setLevel(player.getLevel()-MainConfig.get().getInt("command.autographCost"));
                             return true;
                         } else {
-                            sendMessageToPlayer(player, "general.itemContainsMaxAutographsBy");
+                            if (MainConfig.get().getBoolean("general.multipleAutographs")) {
+                                Utils.addLore(item, Utils.genAutograph(player.getName()));
+                                player.setLevel(player.getLevel()-MainConfig.get().getInt("command.autographCost"));
+                                return true;
+                            } else {
+                                sendMessageToPlayer(player, "general.itemContainsMaxAutographsBy");
+                            }
                         }
+                    }else{
+                        sendMessageToPlayer(player, "general.notEnoughExp");
                     }
                 }
             } else {

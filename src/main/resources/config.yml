@@ -13,6 +13,7 @@ general:
   multipleAutographs: false
   #emptyHandMessage
   emptyHandMessage: "<color:red>Take the item you want to autograph in your main hand</color:red>"
+  notEnoughExp: "<color:red>You don't have enough experience to do that</color:red>"
 anvil:
   enabled: true
   item: #An item used to leave an autograph through anvil
