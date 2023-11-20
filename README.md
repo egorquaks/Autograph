@@ -10,7 +10,7 @@ A simple plugin that allows you to leave autographs on items.
 - Ability to remove autographs through the grindstone.
 - Ability to set a list of possible items on which you can leave an autograph.
 - Ability to customize the autograph form (and all messages output by the plugin, too) using [MiniMessage](https://docs.advntr.dev/minimessage/index.html).
-- Ability to customize the item which used to leave autograps through the anvil.
+- Ability to customize the item which used to leave autographs through the anvil.
 
 ## Installation
 
