@@ -57,8 +57,11 @@ public class Utils {
         //Bukkit.getLogger().info(GsonComponentSerializer.gson().serialize(MiniMessage.miniMessage().deserialize(miniAutograph)));
         return LegacyComponentSerializer.builder().hexColors().useUnusualXRepeatedCharacterHexFormat().build().serialize(MiniMessage.miniMessage().deserialize(miniAutograph));
     }
-    public static boolean canContainAutograph(ItemStack item){
-        List<String> autographItemList = MainConfig.get().getStringList("allowedItems");
+    public static boolean canContainAutograph(ItemStack item) {
+        if (!MainConfig.get().getBoolean("allowedItems.enabled"))
+            return true;
+
+        List<String> autographItemList = MainConfig.get().getStringList("allowedItems.items");
         return autographItemList.contains(item.getType().name());
     }
     public static String getItemName(ItemStack itemStack) {
