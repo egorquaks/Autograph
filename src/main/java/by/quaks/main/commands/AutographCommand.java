@@ -31,12 +31,13 @@ public class AutographCommand implements CommandExecutor {
                     sendMessageToPlayer(player, "general.emptyHandMessage");
                     return true;
                 }
-                List<String> allowedItems = MainConfig.get().getStringList("allowedItems");
+                List<String> allowedItems = MainConfig.get().getStringList("allowedItems.items");
                 List<String> allowedItemsLower = new ArrayList<>();
                 for (String material : allowedItems) {
                     allowedItemsLower.add(material.toLowerCase());
                 }
                 if (!allowedItemsLower.contains(item.getType().name().toLowerCase())) {
+                    System.out.println(allowedItemsLower);
                     sendMessageToPlayer(player, "general.itemNotTheList");
                     return true;
                 } else {

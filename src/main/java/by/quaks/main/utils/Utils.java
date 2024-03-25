@@ -23,9 +23,7 @@ public class Utils {
         String autographForm = PlainTextComponentSerializer.plainText().serialize(component);
         String autographPattern = autographForm.replaceAll("\\{player-name}","(.*?)");
         Pattern pattern = Pattern.compile(autographPattern);
-        return lore.stream().anyMatch(s -> {
-            return pattern.matcher(ChatColor.stripColor(s)).find();
-        });
+        return lore.stream().anyMatch(s -> pattern.matcher(ChatColor.stripColor(s)).find());
     }
     public static boolean hasAutographBy(ItemStack itemStack, String playerName){
         List<String> lore = getLore(itemStack);
