@@ -1,7 +1,7 @@
 name: Autograph
 version: '${project.version}'
 main: by.quaks.main.AutographPlugin
-api-version: 1.19
+api-version: 26.3
 commands:
   autograph:
     description: Leave autograph
