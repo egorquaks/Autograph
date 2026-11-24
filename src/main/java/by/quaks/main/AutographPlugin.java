@@ -26,7 +26,7 @@ public class AutographPlugin extends JavaPlugin {
         getCommand("autograph").setExecutor(new AutographCommand(adventure()));
         getCommand("remove-autograph").setExecutor(new RMAutographCommand(adventure()));
         getServer().getPluginManager().registerEvents(new AnvilListener(this), this);
-        getServer().getPluginManager().registerEvents(new GrindstoneListener(), this);
+        getServer().getPluginManager().registerEvents(new GrindstoneListener(this), this);
     }
     @Override
     public void onDisable() {
