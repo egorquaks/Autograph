@@ -28,7 +28,7 @@ public class GrindstoneListener implements Listener {
             } else {
                 return;
             }
-            ItemMeta itemMeta = upperItem.getItemMeta();
+            ItemMeta itemMeta = finalItem.getItemMeta();
             itemMeta.setLore(Utils.clearedLore(itemMeta.getLore()));
             finalItem.setItemMeta(itemMeta);
             event.setResult(finalItem);
