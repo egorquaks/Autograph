@@ -36,7 +36,6 @@ public class GrindstoneListener implements Listener {
                 ItemStack slot2 = event.getInventory().getItem(1);
                 if ((slot1 != null && Utils.isAutographed(slot1))
                         || (slot2 != null && Utils.isAutographed(slot2))){
-                    plugin.getLogger().info("Снимаем подпись");
                     plugin.getServer().getScheduler().runTask(plugin, () ->{
                         boolean inputsEmpty = grindstoneInventory.getItem(0) == null
                                 && grindstoneInventory.getItem(1) == null;
@@ -44,7 +43,6 @@ public class GrindstoneListener implements Listener {
                         if(inputsEmpty){
                             Location location = grindstoneInventory.getLocation();
                             if(location != null && location.getWorld() != null && refund > 0){
-                                plugin.getLogger().info(""+refund);
                                 location.getWorld().spawn(
                                         location.clone().add(0.5,1,0.5),
                                         ExperienceOrb.class,
